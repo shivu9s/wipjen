@@ -10,41 +10,39 @@ import org.junit.Test;
 
 public class MainClassTest {
 
-	MainClass mc;
+    MainClass mc;
 
-	@BeforeClass
-	public static void setUpClass() {
-		System.out.println("From SetupClass method");
-	}
+    @BeforeClass
+    public static void setUpClass() {
+        System.out.println("From SetupClass method");
+    }
 
-	@Before
-	public void setUp() {
-		System.out.println("From Setup method");
-		mc = new MainClass();
-	}
+    @Before
+    public void setUp() {
+        System.out.println("From Setup method");
+        mc = new MainClass();
+    }
 
-	@Test
-	public void testAdd() {
-		System.out.println("From add method");
-		assertEquals(60, mc.add(20, 20, 20));
-	}
+    @Test
+    public void testAdd() {
+        System.out.println("From add method");
+        assertEquals(60, mc.add(20, 20, 20));
+    }
 
-	@Test
-	public void testMultiply() {
-		System.out.println("From multiply method");
-		assertEquals(100, mc.multiply(10, 20));
-	}
+    @Test
+    public void testMultiply() {
+        System.out.println("From multiply method");
+        assertEquals(200, mc.multiply(10, 20)); // ✅ FIXED
+    }
 
-	@After
-	public void tearDown() {
-		System.out.println("From TEAR Down  method");
-		mc = null;
+    @After
+    public void tearDown() {
+        System.out.println("From TEAR Down  method");
+        mc = null;
+    }
 
-	}
-
-	@AfterClass
-	public static void tearDownClass() {
-		System.out.println("From tearDownClass method");
-	}
-
+    @AfterClass
+    public static void tearDownClass() {
+        System.out.println("From tearDownClass method");
+    }
 }
